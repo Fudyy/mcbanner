@@ -1,4 +1,4 @@
-#[derive(Debug)]
+/// Minecraft color codes
 pub enum MCColor {
     White,
     LightGray,

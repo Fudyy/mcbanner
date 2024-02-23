@@ -5,7 +5,7 @@ use image::{imageops::overlay, DynamicImage, Rgba, RgbaImage};
 const BANNER_WIDTH: u32 = 400;
 const BANNER_HEIGHT: u32 = 780;
 
-/// Represents a banner in Minecraft.
+/// Represents a Minecraft banner.
 pub struct Banner {
     base_color: MCColor,
     patterns: Vec<(Pattern, MCColor)>,
@@ -28,7 +28,7 @@ impl Banner {
         self
     }
 
-    /// Renders the banner
+    /// Renders the banner image.
     pub fn render(&mut self) -> &mut Self {
         self.render_base();
         // Render the patterns

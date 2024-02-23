@@ -7,7 +7,7 @@ use rust_embed::RustEmbed;
 #[folder = "patterns/"]
 struct Asset;
 
-#[derive(Debug)]
+/// Represents a pattern for a Minecraft banner.
 pub enum Pattern {
     SquareTopLeft,
     SquareTopRight,
