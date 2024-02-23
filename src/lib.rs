@@ -1,5 +1,5 @@
-pub mod patterns;
 pub mod colors;
+pub mod patterns;
 
 use patterns::Pattern;
 use colors::MCColor;
@@ -7,7 +7,6 @@ use image::{imageops::overlay, DynamicImage, Rgba, RgbaImage};
 
 const BANNER_WIDTH: u32 = 400;
 const BANNER_HEIGHT: u32 = 780;
-const PATTERNS_PATH: &str = "patterns/";
 
 /// Represents a banner in Minecraft.
 pub struct Banner {
@@ -64,8 +63,7 @@ impl Banner {
 
         for (pattern, color) in &self.patterns {
             // Load the pattern image
-            let pattern_path = format!("{}{}.png", PATTERNS_PATH, pattern.to_lowercase_string());
-            let mut pattern_image = image::open(pattern_path).unwrap();
+            let mut pattern_image = pattern.image();
 
             // Change the color of the pattern to the given color
             pattern_image.as_mut_rgba8().unwrap().pixels_mut().for_each(|p| {
