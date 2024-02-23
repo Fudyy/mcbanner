@@ -1,4 +1,4 @@
-/// Minecraft color codes
+/// Minecraft dye colors.
 pub enum MCColor {
     White,
     LightGray,
@@ -19,6 +19,7 @@ pub enum MCColor {
 }
 
 impl MCColor {
+    /// Returns the RGB representation of the color.
     pub fn rgb(&self) -> [u8; 3] {
         match self {
             MCColor::White => [249, 255, 254],
