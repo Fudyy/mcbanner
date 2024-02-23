@@ -1,5 +1,5 @@
 //! # Overview
-//! This library is a simple way to create Minecraft banner images. It uses the [image](https://docs.rs/image/) crate under the hood to generate the images.
+//! This library is a simple way to create Minecraft banner images. It uses the [image](https://docs.rs/image/) crate under the hood for the image generation.
 //!
 //! ## Usage
 //! The [Banner] struct is the main entrypoint of the library.
@@ -12,6 +12,7 @@
 //!     banner.render();
 //!     banner.save("banner.png").unwrap();
 //! }
+//! ```
 
 mod banner;
 mod patterns;
