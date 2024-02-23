@@ -46,6 +46,7 @@ pub enum Pattern {
     GradientUp,
     Skull,
     Flower,
+    Thing,
 }
 
 impl Pattern {
@@ -88,6 +89,7 @@ impl Pattern {
             Pattern::GradientUp => "gradient_up.png",
             Pattern::Skull => "skull.png",
             Pattern::Flower => "flower.png",
+            Pattern::Thing => "thing.png",
         }
         .to_string()
     }
