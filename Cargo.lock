@@ -259,7 +259,7 @@ dependencies = [
 
 [[package]]
 name = "mcbanner"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "image",
  "rust-embed",

@@ -8,7 +8,7 @@ It uses the [image](https://docs.rs/image/) under the hood for the image generat
 Add this to your `Cargo.toml`:
 ```toml
 [dependencies]
-mcbanner = "0.1.0"
+mcbanner = "0.1.1"
 ```
 ### Example
 
