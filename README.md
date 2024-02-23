@@ -17,8 +17,8 @@ The `Banner` struct is the main entrypoint of the library.
  use mcbanner::{Banner, Pattern, MCColor};
  
  fn main() {
-     let mut banner = Banner::new(MCColor::Red);
-     banner.add_pattern(Pattern::Bricks, MCColor::Orange);
+     let mut banner = Banner::new(MCColor::Lime);
+     banner.add_pattern(Pattern::Creeper, MCColor::Black);
      banner.render();
      banner.save("banner.png").unwrap();
  }
