@@ -18,8 +18,8 @@ pub struct Banner {
 
 impl Banner {
     /// Creates a new banner image.
-    pub fn new(base_color: MCColor) -> Banner {
-        Banner {
+    pub fn new(base_color: MCColor) -> Self {
+        Self {
             base_color,
             patterns: Vec::new(),
             image: RgbaImage::new(BANNER_WIDTH, BANNER_HEIGHT),
@@ -27,22 +27,24 @@ impl Banner {
     }
 
     /// Adds a pattern to the banner with the given color.
-    pub fn add_pattern(&mut self, pattern: Pattern, color: MCColor) {
+    pub fn add_pattern(&mut self, pattern: Pattern, color: MCColor) -> &mut Self {
         self.patterns.push((pattern, color));
+        self
     }
 
     /// Renders the banner
-    pub fn render(&mut self) {
+    pub fn render(&mut self) -> &mut Self {
         self.render_base();
         // Render the patterns
         let patterns: Vec<DynamicImage> = self.render_patterns();
         if patterns.is_empty() {
-            return;
+            return self
         }
         // Overlay the patterns on the base color
         patterns.iter().for_each(|pattern| {
             overlay(&mut self.image, pattern, 0, 0)
         });
+        self
     }
 
     /// Renders the base color of the banner.
@@ -78,7 +80,12 @@ impl Banner {
     }
 
     /// Saves the banner to the given path.
-    pub fn save(&self, path: &str) {
-        self.image.save(path).unwrap();
+    pub fn save(&self, path: &str) -> Result<(), image::ImageError> {
+        self.image.save(path)
+    }
+
+    /// Returns the banner as a dynamic image.
+    pub fn as_dynamic_image(&self) -> DynamicImage {
+        DynamicImage::ImageRgba8(self.image.clone())
     }
 }
